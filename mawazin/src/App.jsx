@@ -1,10 +1,10 @@
 import Nav from './components/Nav'
-import Home from './components/Home'
-import Programms from './components/Programms'
+import Home from './pages/Home'
+import Programms from './pages/Programms'
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
 import './index.css'
-import Planning from './components/Planning'
-import Passeport from './components/Passeport'
+import Planning from './pages/Planning'
+import Passeport from './pages/Passeport'
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
       <Route path='/' element={<Home />} />
       <Route path='/programme' element={<Programms />} />
       <Route path='/planning' element={<Planning />} />
-      <Route path='/passeport' element={<Passeport />} />
+      <Route path='/Passeport' element={<Passeport />} />
 
     </Routes>
 

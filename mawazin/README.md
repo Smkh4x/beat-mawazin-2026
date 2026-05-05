@@ -14,3 +14,23 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+      <div className="flex justify-center gap-4">
+        {CardData.map((Card) => (
+        <div className="flex bg-amber-50 w-60 h-80 ">
+        <h1>{Card.title}</h1>
+        <img />
+        <h3>{Card.text}</h3>
+
+        </div>
+
+        ))}
+
+          const CardData = () =>{
+    const Card =[
+    { id: 1, title: 'labobo', text: 'fanan nadi' },
+    { id: 2, title: '7med', text: 'ait lfanana' },
+    { id: 3, title: 'yasser', text: 'wld-char9i' }
+  ];
+  }
