@@ -1,31 +1,20 @@
 import { NavLink } from "react-router-dom"
 import logo from '../assets/playImg.jpg'
 import logo1 from '../assets/tsawer3.jpg'
+import Nums from "../data/data"
+import Card from "../components/Card"
 
-import img1 from '../assets/arbi.jpg'
-import img2 from '../assets/saidmjred.jpeg'
-import img3 from '../assets/stati.jpeg'
+
+function setStorage(id) {
+  let storage = JSON.parse(localStorage.getItem("fav")) || []
+  storage.push(id)
+
+  localStorage.setItem("fav", JSON.stringify(storage))
+
+}
 
 function Home() {
-  const Nums = [
-    {
-      Name: "Chab Arbi",
-      img1,
-      discription: "19:00",
 
-    },
-    {
-      Name: "Said elmjared",
-      img2,
-      discription: "22:00",
-    },
-    {
-      Name: "stati",
-      img3,
-      discription: "18:00",
-    }
-
-  ]
 
   return (
     <>
@@ -64,32 +53,8 @@ function Home() {
       </div>
 
       <div className="flex gap-30 justify-center">
-        {Nums.map((num, i) => {
-          return <div key={i} className="bg-white w-60 h-80 rounded-2xl text-center py-4 font-bold ">
-              <h1>{num.Name}</h1>
-              <div className="flex justify-center">
-
-              <img src={num.img1} />
-              <img src={num.img2} />
-              <img src={num.img3} />
-
-              </div>
-              <h3 className="py-2">{num.discription}</h3>
-            </div>
-          
-        })}
+        {Nums.map(num => <Card key={num.id} id={num.id} name={num.Name} img={num.img} discription={num.discription} setStorage={setStorage} />)}
       </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
     </>
