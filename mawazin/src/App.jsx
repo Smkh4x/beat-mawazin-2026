@@ -13,11 +13,17 @@ function App() {
     <BrowserRouter >
 
     <Nav />
+    
 
     <Routes>
       
       <Route path='/' element={<Home />} />
       <Route path='/programme' element={<Programms />} />
+      <Route path='/programme/All' element={<Programms />} />
+      <Route path='/programme/Pop' element={<Programms />} />
+      <Route path='/programme/Rap' element={<Programms />} />
+      <Route path='/programme/EDM' element={<Programms />} />
+      
       <Route path='/planning' element={<Planning />} />
       <Route path='/Passeport' element={<Passeport />} />
 

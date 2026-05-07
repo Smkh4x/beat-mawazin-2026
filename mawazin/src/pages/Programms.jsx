@@ -1,36 +1,32 @@
-import Card from "../components/Card";
-import Nums from "../data/data"
+import { NavLink } from "react-router-dom"
 
 function Programms() {
 
-  if(!localStorage.getItem("fav")){
-    return <div>
-      <p>No favorite found!!</p>
-    </div>
-  }
-
-  let favs = JSON.parse(localStorage.getItem("fav"))
-
-  const res = []
-
-  for(let i = 0; i < favs.length ; i++){
-    for(let j = 0; j < Nums.length; j++){
-      if(+favs[i] === Nums[j].id){
-        res.push(Nums[j])
-      }
-    }
-  }
- 
-
+  const days = ["19","20","21","22","23","24","25","26","27"]
   return (
+    <>
+      <div className="flex text-white justify-center">
+        <ul className="flex gap-4">
+          <li><NavLink to="/programme/All" href="">All</NavLink></li>
+          <li><NavLink to="/programme/Pop" href="">Pop</NavLink></li>
+          <li><NavLink to="/programme/Rap" href="">Rap</NavLink></li>
+          <li><NavLink to="/programme/EDM" href="">EDM</NavLink></li>
+        </ul>
+      </div>
+      <div className="flex justify-center gap-8 ">
+        {days.map(day => 
+          <div key={day} className="py-4 text-white">
+            <button><NavLink>{day}</NavLink></button>
+        </div>
+        )}
 
-    <div className="flex justify-center gap-4">
-      {res.map(favorite => <Card id={favorite.id} name={favorite.Name} img={favorite.img} discription={favorite.discription}/>)}
-  
-    </div>
 
+      </div>
 
+    </>
 
   )
+
+
 }
 export default Programms

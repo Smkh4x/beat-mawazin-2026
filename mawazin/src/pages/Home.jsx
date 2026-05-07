@@ -1,20 +1,22 @@
 import { NavLink } from "react-router-dom"
 import logo from '../assets/playImg.jpg'
 import logo1 from '../assets/tsawer3.jpg'
-import Nums from "../data/data"
-import Card from "../components/Card"
-
+import Card from '../components/Card'
+import myData from "../data/data"
 
 function setStorage(id) {
-  let storage = JSON.parse(localStorage.getItem("fav")) || []
-  storage.push(id)
+  const addFav = JSON.parse(localStorage.getItem("mo5aniyin")) || []
+  if (addFav.includes(id)) return
 
-  const set = new Set(storage)
-  storage = Array.from(set)
+  addFav.push(id)
 
-  localStorage.setItem("fav", JSON.stringify(storage))
+  localStorage.setItem("mo5aniyin", JSON.stringify(addFav))
+
+
+
 
 }
+
 
 function Home() {
 
@@ -30,19 +32,14 @@ function Home() {
             <h4 className='py-4'>Le Plus grad festival de musique au monde</h4>
           </div>
         </div>
-
         <div className='flex absolute inset-0 justify-center text-white gap-4'>
           <NavLink to="/programme"><button className='bg-amber-300 mt-90 mb-90 h-10 w-40 rounded-2xl'>Voir le programme</button></NavLink>
           <NavLink to="/passeport"><button className='bg-emerald-500 mt-90 mb-90 h-10 w-40 rounded-2xl'>Mon passeport</button></NavLink>
         </div>
-
       </div>
 
       <div className="flex justify-center text-white py-8">
-
         <h1 className="text-2xl font-serif">Concert du soir</h1>
-
-
       </div>
 
       <div className="flex justify-center">
@@ -56,7 +53,8 @@ function Home() {
       </div>
 
       <div className="flex gap-30 justify-center">
-        {Nums.map(num => <Card key={num.id} id={num.id} name={num.Name} img={num.img} discription={num.discription} setStorage={setStorage} />)}
+        {myData.map(data => <Card key={data.id} item={data} setStorage={setStorage} />)}
+
       </div>
 
 
