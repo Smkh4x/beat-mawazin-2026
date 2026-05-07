@@ -9,6 +9,9 @@ function setStorage(id) {
   let storage = JSON.parse(localStorage.getItem("fav")) || []
   storage.push(id)
 
+  const set = new Set(storage)
+  storage = Array.from(set)
+
   localStorage.setItem("fav", JSON.stringify(storage))
 
 }
