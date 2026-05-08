@@ -6,17 +6,7 @@ import myData from "../data/data"
 import {useState } from "react"
 
 
-/* 
-function setStorage(id) {
-  const addFav = JSON.parse(localStorage.getItem("mo5aniyin")) || []
-  if(addFav.includes(id)) return;
 
-  addFav.push(id)
-
-  localStorage.setItem("mo5aniyin", JSON.stringify(addFav))
-
-}
-   */
 function Home() {
 
     const [fav, setFav] = useState(() => {
@@ -64,7 +54,7 @@ function Home() {
 
       </div>
 
-      <div className="flex gap-30 justify-center">
+      <div className="flex gap-30 justify-center grid grid-cols-3 gap-6">
         {myData.map(data => <Card key={data.id} item={data} rmSt={setStorage} classConfig={"bg-blue-500 text-white px-8 py-0.5 rounded"} buttonName={"add"}/>)}
 
 

@@ -7,7 +7,7 @@ function Card({ item ,rmSt , classConfig, buttonName}) {
                     <img src={item.img} />
                 </div>
             </div>
-            <h3 className="py-2">{item.discription}</h3>
+            <h3 className="py-2">{item.time}</h3>
         <button className={classConfig}  onClick={() => rmSt(item.id)}>{buttonName}</button>
         </div>
     )
