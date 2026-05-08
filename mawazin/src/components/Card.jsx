@@ -1,4 +1,4 @@
-function Card({ item, setStorage }) {
+function Card({ item ,rmSt , classConfig, buttonName}) {
     return (
         <div className="bg-white w-60 h-80 rounded-2xl text-center py-4 font-bold ">
             <h1>{item.name}</h1>
@@ -8,8 +8,9 @@ function Card({ item, setStorage }) {
                 </div>
             </div>
             <h3 className="py-2">{item.discription}</h3>
-            <button className="bg-blue-500 text-white px-8 py-0.5 rounded " onClick={() => setStorage(item.id)}>add</button>
+        <button className={classConfig}  onClick={() => rmSt(item.id)}>{buttonName}</button>
         </div>
     )
 }
 export default Card
+

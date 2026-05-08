@@ -1,37 +1,16 @@
-import Nav from './components/Nav'
-import Home from './pages/Home'
-import Programms from './pages/Programms'
-import {Routes, Route, BrowserRouter} from 'react-router-dom'
+
+
 import './index.css'
-import Planning from './pages/Planning'
-import Passeport from './pages/Passeport'
+import Router from './router/Router'
 
 function App() {
 
   return (
-
-    <BrowserRouter >
-
-    <Nav />
+    <>
+    <Router />
     
+    </>
 
-    <Routes>
-      
-      <Route path='/' element={<Home />} />
-      <Route path='/programme' element={<Programms />} />
-      <Route path='/programme/All' element={<Programms />} />
-      <Route path='/programme/Pop' element={<Programms />} />
-      <Route path='/programme/Rap' element={<Programms />} />
-      <Route path='/programme/EDM' element={<Programms />} />
-      
-      <Route path='/planning' element={<Planning />} />
-      <Route path='/Passeport' element={<Passeport />} />
-
-    </Routes>
-
-
-  
-    </BrowserRouter >
   )
 }
 

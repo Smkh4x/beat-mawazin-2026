@@ -1,9 +1,23 @@
+import { useState } from "react"
+
+
+
+
 function Passeport() {
+
+    const [count, setCount] = useState(0);
+  
   return (
-    <>
-        <div>Passeport</div>
-    <h1>uekfiue</h1>
-    </>
+    
+<>
+<div className="bg-amber-300 flex justify-center">
+
+      <button onClick={() => setCount(count + 1)}>{count}</button>
+    
+</div>
+
+
+   </>
 
   )
 }

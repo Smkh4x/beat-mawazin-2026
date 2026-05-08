@@ -3,22 +3,34 @@ import logo from '../assets/playImg.jpg'
 import logo1 from '../assets/tsawer3.jpg'
 import Card from '../components/Card'
 import myData from "../data/data"
+import {useState } from "react"
 
+
+/* 
 function setStorage(id) {
   const addFav = JSON.parse(localStorage.getItem("mo5aniyin")) || []
-  if (addFav.includes(id)) return
+  if(addFav.includes(id)) return;
 
   addFav.push(id)
 
   localStorage.setItem("mo5aniyin", JSON.stringify(addFav))
 
-
-
-
 }
-
-
+   */
 function Home() {
+
+    const [fav, setFav] = useState(() => {
+    return JSON.parse(localStorage.getItem("mo5aniyin")) || [];
+  });
+
+  function setStorage(id) {
+    if (fav.includes(id)) return;
+    const updated = [...fav, id];
+    setFav(updated);
+    localStorage.setItem("mo5aniyin", JSON.stringify(updated)
+    );
+  }
+
 
 
   return (
@@ -53,7 +65,8 @@ function Home() {
       </div>
 
       <div className="flex gap-30 justify-center">
-        {myData.map(data => <Card key={data.id} item={data} setStorage={setStorage} />)}
+        {myData.map(data => <Card key={data.id} item={data} rmSt={setStorage} classConfig={"bg-blue-500 text-white px-8 py-0.5 rounded"} buttonName={"add"}/>)}
+
 
       </div>
 
