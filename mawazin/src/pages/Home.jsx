@@ -9,6 +9,7 @@ import { useState } from "react"
 
 function Home() {
 
+
   const [fav, setFav] = useState(() => {
     return JSON.parse(localStorage.getItem("mo5aniyin")) || [];
   });
@@ -22,7 +23,7 @@ function Home() {
 
   return (
     <>
-      <div className='relative'>
+      <div data-aos="fade-right" className='relative'>
         <img src={logo} className="w-full h-auto" />
         <div className='absolute inset-0 flex justify-center text-center'>
           <div className='text-white'>
@@ -53,11 +54,16 @@ function Home() {
 
       <div className="flex justify-center">
         <div className=" grid grid-cols-3 gap-6">
-           {myData.slice(0, 6).map(data => <Card key={data.id} item={data} rmSt={setStorage} classConfig={"bg-blue-500 text-white px-8 py-0.5 rounded"} buttonName={"add"} />)}
-
-
+           {myData.slice(0, 6).map(data => 
+           <Card 
+           key={data.id}
+           item={data}
+           re_set={setStorage}
+           classConfig={"bg-blue-500 text-white px-8 py-0.5 rounded"}
+           buttonName={"add"} 
+           />)}
         </div>
-       
+        
       </div>
 
 
