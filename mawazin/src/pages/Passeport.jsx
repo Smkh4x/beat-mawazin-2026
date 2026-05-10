@@ -1,33 +1,32 @@
-import { useState } from "react"
-
-
+import logo from '../assets/mawazine.png'
 function Passeport() {
-
-
-
-  const [name, setName] = useState("youssef")
-
 
   return (
 
-
     <>
-      <div className="flex justify-center text-center">
-        <div className=" bg-white w-120 h-90 rounded-4xl">
-          <div className="flex-col text-green-600 text-4xl py-8">
-            <h1>THis id Hiistoy</h1>
-            <div className=" text-red-300 py-12">
-              <h3>user : add item</h3>
-              <br />
-              <h3>user : remove item {name}</h3>
-
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="relative bg-white w-160 h-90 rounded-4xl">
+          <img src={logo} />
+            <div className='absolute top-0 ms-70 py-10 text-2xl font-bold '>
+              <h1>FullName: Ali abo ahmmed</h1>
+             
+              <div className='ms-10 font-serif'>
+                 <br />
+                <h2>FASTIVAL MAWAZINE</h2>
+              </div>
+                  <p class="text-sm text-gray-500 mt-1">
+      One of the biggest music festivals in Africa 🌍
+    </p>
+              
             </div>
-            <button onClick={() => setName("yasser")}>clickme</button>
+
+          <div className='flex justify-center py-8'>
+            <h4>Card-viste </h4>
           </div>
+
+
+
         </div>
-
-
-
       </div>
     </>
 

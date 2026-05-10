@@ -17,11 +17,8 @@ function Home() {
     if (fav.includes(id)) return;
     const updated = [...fav, id];
     setFav(updated);
-    localStorage.setItem("mo5aniyin", JSON.stringify(updated)
-    );
+    localStorage.setItem("mo5aniyin", JSON.stringify(updated));
   }
-
-
 
   return (
     <>
@@ -54,10 +51,13 @@ function Home() {
 
       </div>
 
-      <div className="flex gap-30 justify-center grid grid-cols-3 gap-6">
-        {myData.slice(0, 6).map(data => <Card key={data.id} item={data} rmSt={setStorage} classConfig={"bg-blue-500 text-white px-8 py-0.5 rounded"} buttonName={"add"} />)}
+      <div className="flex justify-center">
+        <div className=" grid grid-cols-3 gap-6">
+           {myData.slice(0, 6).map(data => <Card key={data.id} item={data} rmSt={setStorage} classConfig={"bg-blue-500 text-white px-8 py-0.5 rounded"} buttonName={"add"} />)}
 
 
+        </div>
+       
       </div>
 
 

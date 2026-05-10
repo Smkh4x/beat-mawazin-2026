@@ -1,4 +1,4 @@
-function Card({ item, rmSt, classConfig, buttonName, cardInfoi }) {
+function Card({ item, rmSt, classConfig, buttonName, setHistory }) {
     return (
         <div className="bg-white w-60 h-80 rounded-2xl text-center py-4 font-bold ">
             <h1>{item.name}</h1>
@@ -8,7 +8,7 @@ function Card({ item, rmSt, classConfig, buttonName, cardInfoi }) {
                 </div>
             </div>
             <h3 className="py-2">{item.time}</h3>
-            <button className={classConfig} onClick={() => rmSt(item.id)}>{buttonName} {cardInfoi}</button>
+            <button className={classConfig }onClick={() =>  {rmSt(item.id); setHistory(item); }}> {buttonName} </button>
         </div>
     )
 }

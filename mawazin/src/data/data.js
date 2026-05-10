@@ -21,7 +21,7 @@ const myData = [
     img: img3,
     time: "20:00",
   },
-//hna data jdida
+
   {
     id: 4,
     name: "Asmaa Lmnawar",
@@ -166,4 +166,5 @@ const myData = [
 ]
 
 export default myData
+
 
